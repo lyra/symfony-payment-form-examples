@@ -1,0 +1,26 @@
+{#
+/**
+ * Copyright © Lyra Network.
+ * This file is part of PayZen Bundle for Symfony. See COPYING.md for license details.
+ *
+ * @author    Lyra Network (https://www.lyra-network.com/)
+ * @copyright Lyra Network
+ * @license   https://opensource.org/licenses/mit-license.html The MIT License (MIT)
+ */
+ #}
+
+<form method="post" action="{{ path('payzen.paymentRedirect') }}" id="payzen_submit_form" >
+    {% for key, value in params %}
+        {% if value is not empty %}
+            <input type="hidden" name="params[{{ key }}]" value="{{ value|escape }}"  />
+        {% endif %}
+    {% endfor %}
+
+    {% for key_log, value_log in params_log %}
+        {% if value_log is not empty %}
+            <input type="hidden" name="params_log[{{ key_log }}]" value="{{ value_log|escape }}"  />
+        {% endif %}
+    {% endfor %}
+
+    <button id="payzen_submit_button" type="submit" id="payzen_submit_button">{{ 'Pay with payzen'|trans }}</button>
+</form>

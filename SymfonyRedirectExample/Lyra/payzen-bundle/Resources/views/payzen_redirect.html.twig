@@ -1,0 +1,35 @@
+{#
+/**
+ * Copyright © Lyra Network.
+ * This file is part of PayZen Bundle for Symfony. See COPYING.md for license details.
+ *
+ * @author    Lyra Network (https://www.lyra-network.com/)
+ * @copyright Lyra Network
+ * @license   https://opensource.org/licenses/mit-license.html The MIT License (MIT)
+ */
+ #}
+
+<div style="opacity: 0.6; padding: 10px; text-align: center; color: #555; border: 3px solid #aaa; background-color: #fff; cursor: wait; line-height: 32px; width: 50%;">
+    Please wait, you will be redirected to the payment gateway.
+</div>
+<p>If nothing happens in 10 seconds, please click the button below.</p>
+<form action="{{ payzen_uri }}" method="post" id="payzen_submit_form">
+    {% for key, value in payzen_raw_request %}
+        {% if value is not empty and key != 'payzen_uri'%}
+            <input type="hidden" name="{{ key }}" value="{{ value|escape }}"  />
+        {% endif %}
+    {% endfor %}
+ <input type="submit" id="payzen_payment_form_submit" value="Pay with Payzen">
+</form>
+
+<script type="text/javascript">
+     function payzen_submit_form() {
+         document.getElementById('payzen_payment_form_submit').click();
+     }
+
+     if (window.addEventListener) {
+         window.addEventListener('load', payzen_submit_form, false);
+     } else if (window.attachEvent) {
+         window.attachEvent('onload', payzen_submit_form);
+     }
+</script>

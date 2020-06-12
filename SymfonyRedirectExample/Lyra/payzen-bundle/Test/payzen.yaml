@@ -1,0 +1,16 @@
+ #
+ # Copyright © Lyra Network.
+ # This file is part of PayZen Bundle for Symfony. See COPYING.md for license details.
+ #
+ # @author    Lyra Network (https://www.lyra-network.com/)
+ # @copyright Lyra Network
+ # @license   https://opensource.org/licenses/mit-license.html The MIT License (MIT)
+ #
+
+payzen:
+    site_id: '59821969'
+    key_test: '9893384774575969'
+    key_prod: '2222222222222222'
+    ctx_mode: 'TEST'
+    sign_algo: 'SHA-256'
+    platform_url: 'https://secure.payzen.eu/vads-payment/'
