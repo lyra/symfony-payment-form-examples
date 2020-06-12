@@ -2,7 +2,7 @@
 PayZen Symfony Example is an open source thant use plugin payzen redirect  that links e-commerce websites based on Symfony framework to PayZen secure payment gateway developed by [Lyra Network](https://www.lyra-network.com/).
 
 this is the link how do you do to install the bundle plugin in your project symfony it ypu want to install in your project symfonya ->
-[how to install plugin in your project](Lyra/payzen-bundle/README.md)
+[how to install plugin in your project](Lyra/payzen-bundle)
 
 ## Prerequisites
 * Symfony 4.0 >=
